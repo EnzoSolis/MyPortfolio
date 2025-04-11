@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <title>Portfolio</title>
+</head>
+<body>
+  <div id="turtle">
+    <span id="turtle_emoji"  onclick="showDialogBox()">🐢</span>
+    <span id="turtle_message">Tap to the turtle</span>
+    <div id="turtle_dialog_box" class="turtle_dialog_box">
+      <span id="turtle_dialog_box_rect">Hi!</span>
+      <span id="turtle_dialog_box_triangle"></span>
+    </div>
+  </div>
+
+  <script>
+    const randomIndex = (len) => Math.floor(Math.random() * len);
+    const message = [
+      "Hi!🖐️", "Nice!", "🐢", "LoL", "Syntax Error⁉️",
+      "Another Day 😎", "🇦🇷", "I don't fix that", "I'm sorry Dave",
+      "Scary Monsters and Nice Sprites"
+    ];
+
+    function showDialogBox() {
+      const dbox = document.getElementById("turtle_dialog_box");
+      const dbox_rect = document.getElementById("turtle_dialog_box_rect");
+
+      let index = randomIndex(message.length);
+      dbox_rect.innerText = message[index];
+      
+      dbox.classList.remove("turtle_dialog_box_hide");
+      void dbox.offsetWidth; // redibujar
+      dbox.classList.add("turtle_dialog_box_hide")
+    }
+  </script>
+</body>
+</html>
