@@ -15,35 +15,51 @@
 <body>
   <header>
     <nav>
-      <div id="nav_menu_bar" onclick="showMenu()">
+      <div id="nav_menu_bar" onclick="showMenu()" tabindex="0">
         <div id="nav_hamburger">
           <div class="nav_hamburger_bar"></div>
           <div class="nav_hamburger_bar"></div>
           <div class="nav_hamburger_bar"></div>
         </div>
-        <span class="nav_title">Portfolio</span>
+        <h1 class="nav_title">Portfolio</h1>
       </div>
       <div id="nav_menu_items" class="nav_menu_items">
         <div class="nav_left">
-          <a class="nav_home" href="#">Inicio</a>
+          <a class="nav_home" href="#" tabindex="1">Inicio</a>
         </div>
         <div class="nav_right">
-          <a class="nav_right_links" href="">Sobre mí</a>
-          <a class="nav_right_links" href="">Projectos</a>
-          <a class="nav_right_links" href="">Contacto</a>
+          <a class="nav_right_links" tabindex="2" href="">Sobre mí</a>
+          <a class="nav_right_links" tabindex="3" href="">Projectos</a>
+          <a class="nav_right_links" tabindex="4" href="">Contacto</a>
         </div>
       </div>
     </nav>
   </header>
-  
   <div id="content">
     <section class="content_presentation">
       <div class="content_presentation_left">
-
+        <h1>Hola, Soy Enzo Solis</h1>
+        <p>Desarrollador Web y Estudiante de Ing. en Sistemas de Información</p>
+        <a class="btn_link" tabindex="5" href="assets/docs/CV_EnzoRaulSolis.pdf" target="_blank">
+          <button type="button" tabindex="-1">Descargar CV</button>
+        </a>
       </div>
       <div class="content_presentation_right">
-
+        <img class="content_presentation_svg" 
+          src="assets/img/undraw_feeling_proud_qne1 1.svg" 
+          alt="Un hombre sentado en el escritorio"
+          >
       </div>
+    </section>
+    <section class="content_about_me">
+      <h1>Sobre Mi</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed velit justo. Nunc sollicitudin luctus 
+        bibendum. Aliquam luctus eu lacus egestas sagittis. Cras efficitur convallis arcu eleifend viverra. 
+        Nam euismod, tortor ut auctor dignissim, diam mauris accumsan tellus, sit amet sagittis enim tortor 
+        at risus. Curabitur nibh massa, pharetra id dolor tincidunt, fermentum ullamcorper nunc. Nunc eu elit 
+        rhoncus, venenatis nibh sit amet, suscipit justo.
+      </p>
     </section>
   </div>
   

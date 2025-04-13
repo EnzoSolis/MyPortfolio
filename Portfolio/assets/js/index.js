@@ -1,4 +1,5 @@
 let menu_is_hide = true;
+changeTheme();
 
 window.onresize = (e) => {
   const menuitems = document.getElementById("nav_menu_items");
@@ -16,6 +17,16 @@ window.onresize = (e) => {
     hamburger.children[2].className = "nav_hamburger_bar";
   }
 };
+
+function changeTheme() {
+  if (!window.matchMedia) return;
+  
+  const html = document.documentElement;
+  const is_dark_theme = window.matchMedia('(prefers-color-scheme:dark)').matches;
+  const theme = (is_dark_theme) ? "dark" : "light";
+
+  html.setAttribute("theme", theme);
+}
 
 function unhideMenu(menuitems, burger) {
   menu_is_hide = false;
