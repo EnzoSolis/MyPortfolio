@@ -1,40 +1,56 @@
 <!DOCTYPE html>
-<html lang="es-ar">
+<html lang="es-ar" theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
   <title>Portfolio</title>
 </head>
 <body>
-  <div id="turtle">
-    <span id="turtle_emoji"  onclick="showDialogBox()">🐢</span>
-    <span id="turtle_message">Tap to the turtle</span>
-    <div id="turtle_dialog_box" class="turtle_dialog_box">
-      <span id="turtle_dialog_box_rect">Hi!</span>
-      <span id="turtle_dialog_box_triangle"></span>
-    </div>
+  <header>
+    <nav>
+      <div id="nav_menu_bar" onclick="showMenu()">
+        <div id="nav_hamburger">
+          <div class="nav_hamburger_bar"></div>
+          <div class="nav_hamburger_bar"></div>
+          <div class="nav_hamburger_bar"></div>
+        </div>
+        <span class="nav_title">Portfolio</span>
+      </div>
+      <div id="nav_menu_items" class="nav_menu_items">
+        <div class="nav_left">
+          <a class="nav_home" href="#">Inicio</a>
+        </div>
+        <div class="nav_right">
+          <a class="nav_right_links" href="">Sobre mí</a>
+          <a class="nav_right_links" href="">Projectos</a>
+          <a class="nav_right_links" href="">Contacto</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div id="content">
+    <section class="content_presentation">
+      <div class="content_presentation_left">
+
+      </div>
+      <div class="content_presentation_right">
+
+      </div>
+    </section>
   </div>
+  
+  <footer>
 
-  <script>
-    const randomIndex = (len) => Math.floor(Math.random() * len);
-    const message = [
-      "Hi!🖐️", "Nice!", "🐢", "LoL", "Syntax Error⁉️",
-      "Another Day 😎", "🇦🇷", "I don't fix that", "I'm sorry Dave",
-      "Scary Monsters and Nice Sprites"
-    ];
+  </footer>
 
-    function showDialogBox() {
-      const dbox = document.getElementById("turtle_dialog_box");
-      const dbox_rect = document.getElementById("turtle_dialog_box_rect");
-
-      let index = randomIndex(message.length);
-      dbox_rect.innerText = message[index];
-      
-      dbox.classList.remove("turtle_dialog_box_hide");
-      void dbox.offsetWidth; // redibujar
-      dbox.classList.add("turtle_dialog_box_hide")
-    }
-  </script>
+  <script src="assets/js/index.js"></script>
 </body>
 </html>
