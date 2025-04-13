@@ -5,4 +5,4 @@ En este proyecto presento mis habilidades técnicas en el ámbito de la programa
 ## Projectos
 
 ## Licencia
-[MIT](https://choosealicense.com/licenses/mit/);
+[MIT](https://choosealicense.com/licenses/mit/)
