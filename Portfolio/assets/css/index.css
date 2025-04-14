@@ -3,7 +3,6 @@
 }
 
 html[theme="light"] {
-  font-size: 16px;
   --text-color: #1D192F;
   --shadow-color: #E4E4E41C;
   --bg-one: #FEFEFE;
@@ -11,6 +10,8 @@ html[theme="light"] {
   --bg-nav: #DADABE;
   --btn-text-color: #E3E3CE;
   --btn-color: #2A2545;
+  --bg-footer: #2A2545;
+  --text-color-footer: #E3E3CE;
 }
 
 html[theme="dark"] {
@@ -20,6 +21,8 @@ html[theme="dark"] {
   --bg-two: #16131A;
   --btn-text-color: #2A2545;
   --btn-color: #E3E3CE;
+  --bg-footer: #E3E3CE;
+  --text-color-footer: #2A2545;
 }
 
 body {
@@ -27,6 +30,7 @@ body {
   flex-direction: column;
   margin: 0;
   background-color: var(--bg-two);
+  color: var(--text-color);
 }
 
 header {
@@ -40,15 +44,120 @@ nav {
 }
 
 h1 {
-  font-family: Anton, sans-serif;
-  font-size: 2rem;
   margin: 0;
-  color: var(--text-color);
 }
 
 p {
   font-family: Poppins, sans-serif;
-  color: var(--text-color);
+}
+
+footer {
+  display: inline-flex;
+  flex-direction: row;
+  background-color: var(--bg-footer);
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.footer_links {
+  width: 50%;
+  height: 100px;
+}
+
+.footer_send_email {
+  display: inline-flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.footer_h1 {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.footer_send_email > form {
+  display: inline-flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.form_email_label {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+input[type="submit"] {
+  color: var(--btn-color);
+  background-color: var(--btn-text-color);
+  border: none;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+input[type="text"], input[type="email"] {
+  border-radius: 0.5rem;
+  height: 2rem;
+  border: none;
+}
+
+#textarea_body {
+  resize: none;
+  overflow: scroll;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+#textarea_body:focus {
+  border:none;
+}
+
+.social_media_ico {
+  width: 2rem;
+  height: 2rem;
+}
+
+.social_media_a:hover, 
+.social_media_a:focus {
+  &.social_media_ico {
+    border: var(--text-color-footer) solid 1px;
+  }
+}
+
+.text-color-dark {
+  color: var(--text-color-footer);
+}
+
+.social_media {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.social_media > li {
+  margin: 0 1rem;
+  list-style-type: none;
+}
+
+.text-title {
+  font-family: Anton, serif;
+  font-size: 2rem;
+}
+
+.text-subtitle {
+  font-family: Antonio, serif;
+  font-size: 1rem;
+}
+
+.text-normal {
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
 }
 
 #nav_menu_bar {
@@ -65,6 +174,7 @@ p {
   background-color: var(--bg-one);
   transition: none;
 
+
   &.nav_menu_unhide{
     height: 4rem;
   }
@@ -77,7 +187,7 @@ p {
   display: flex;
 }
 
-.nav_right_links {
+a {
   color: var(--text-color);
   font-family: Antonio, sans-serif;
   font-weight: 400;
@@ -85,17 +195,12 @@ p {
   margin: 0 0.5rem;
 }
 
-.nav_right_links:hover {
+a:hover, a:focus {
   text-decoration: underline;
 }
 
-.nav_right_links:focus {
-  text-decoration: underline;
+a:focus {
   outline: none;
-}
-
-.nav_right_links:last-child {
-  margin-right: 0;
 }
 
 .nav_left {
@@ -121,6 +226,7 @@ p {
 
 #content {
   margin-top: 4rem;
+  overflow-x: clip;
 }
 
 .content_presentation {
@@ -158,6 +264,10 @@ p {
   height: 85%;
 }
 
+.btn_link {
+  margin: 0;
+}
+
 .btn_link > button {
   padding: 0.5rem;
   font-size: 0.75rem;
@@ -180,6 +290,7 @@ p {
   height: auto;
   width: 100%;
   background-color: var(--bg-one);
+  color: var(--text-color);
   align-content: center;
 }
 
@@ -194,10 +305,29 @@ p {
   padding: 2rem 4rem;
 }
 
+.content_projects {
+  width: 100%;
+  height: 400px;
+  padding: 2rem 0;
+}
+
+
 
 
 @media (width < 480px) {
-  
+
+  footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer_links {
+    width: 100%;
+  }
+
+  .footer_send_email {
+    width: 100%;
+  }
+
   nav {
     display: block;
     height: auto;
@@ -304,19 +434,8 @@ p {
 
   .nav_left {
     display: flex;
-    width: 100%;
     flex-direction: column;
     align-items: center;
-  }
-
-  .nav_title {
-    font-family: Anton;
-    font-size: 1.5rem;
-    color: var(--text-color);
-  }
-
-  .nav_home {
-    font-family: Antonio, sans-serif;
     margin-top: 2rem;
   }
 
@@ -326,11 +445,11 @@ p {
     margin-top: 1rem;
   }
 
-  .nav_right_links{
+  .nav_right > a{
     margin: 1rem 0;
   }
 
-  .nav_right_links:last-child {
+  .nav_right > a:last-child {
     margin-bottom: 2rem;
   }
 
@@ -348,6 +467,7 @@ p {
   .content_presentation_left {
     width: auto;
     height: auto;
+    padding: 2rem 2rem;
   }
   
   .content_presentation_right {

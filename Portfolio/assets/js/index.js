@@ -71,3 +71,16 @@ function showMenu() {
   }
 
 }
+
+function sendEmail(e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const body = document.getElementById("textarea_body").value;
+
+  console.log(body);
+
+  window.open(`mailto:${email}?subject=${subject}&body=${body}`);
+}
+
+addEventListener('submit', sendEmail);
