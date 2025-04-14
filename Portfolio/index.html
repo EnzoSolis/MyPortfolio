@@ -1,40 +1,108 @@
 <!DOCTYPE html>
-<html lang="es-ar">
+<html lang="es-ar" theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/index.css">
+  
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
   <title>Portfolio</title>
 </head>
 <body>
-  <div id="turtle">
-    <span id="turtle_emoji"  onclick="showDialogBox()">🐢</span>
-    <span id="turtle_message">Tap to the turtle</span>
-    <div id="turtle_dialog_box" class="turtle_dialog_box">
-      <span id="turtle_dialog_box_rect">Hi!</span>
-      <span id="turtle_dialog_box_triangle"></span>
-    </div>
+  <header>
+    <nav>
+      <div id="nav_menu_bar" onclick="showMenu()" tabindex="0">
+        <div id="nav_hamburger">
+          <div class="nav_hamburger_bar"></div>
+          <div class="nav_hamburger_bar"></div>
+          <div class="nav_hamburger_bar"></div>
+        </div>
+        <h1 class="text-title">Portfolio</h1>
+      </div>
+      <div id="nav_menu_items" class="nav_menu_items">
+        <div class="nav_left">
+          <a class="nav_home" href="index.html" tabindex="1">Inicio</a>
+        </div>
+        <div class="nav_right">
+          <a class="text-subtitle" tabindex="2" href="#aboutme">Sobre mí</a>
+          <a class="text-subtitle" tabindex="3" href="#projects">Projectos</a>
+          <a class="text-subtitle" tabindex="4" href="#contact">Contacto</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div id="content">
+    <section class="content_presentation">
+      <div class="content_presentation_left">
+        <h1 class="text-title">Hola, Soy Enzo Solis</h1>
+        <p class="text-subtitle">Desarrollador Web y Estudiante de Ing. en Sistemas de Información</p>
+        <a class="btn_link" tabindex="5" href="assets/docs/CV_EnzoRaulSolis.pdf" target="_blank">
+          <button type="button" tabindex="-1">Descargar CV</button>
+        </a>
+      </div>
+      <div class="content_presentation_right">
+        <img class="content_presentation_svg" 
+          src="assets/img/undraw_feeling_proud_qne1 1.svg" 
+          alt="Un hombre sentado en el escritorio"
+          >
+      </div>
+    </section>
+    <section id="aboutme" class="content_about_me">
+      <h1 class="text-title">Sobre Mi</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed velit justo. Nunc sollicitudin luctus 
+        bibendum. Aliquam luctus eu lacus egestas sagittis. Cras efficitur convallis arcu eleifend viverra. 
+        Nam euismod, tortor ut auctor dignissim, diam mauris accumsan tellus, sit amet sagittis enim tortor 
+        at risus. Curabitur nibh massa, pharetra id dolor tincidunt, fermentum ullamcorper nunc. Nunc eu elit 
+        rhoncus, venenatis nibh sit amet, suscipit justo.
+      </p>
+    </section>
+
+    <section id="projects" class="content_projects">
+      <h1 class="text-title" style="text-align:center;width:100%;">Proyectos</h1>
+    </section>
+
   </div>
+  
+  <footer id="contact">
+    <div class="footer_links">
+      <h1 class="footer_h1 text-title text-color-dark" style="font-size: 1.5rem;">Contacto</h1>
+      <ul class="social_media">
+        <li>
+          <a class="social_media_a" href="https://www.instagram.com/enzos_lp/" target="_blank">
+            <img class="social_media_ico" src="assets/img/instagram_brand.png" alt="Instagram">
+          </a>
+        </li>
+        <li>
+          <a class="social_media_a" href="https://wa.me/+543644383065" target="_blank">
+            <img class="social_media_ico" src="assets/img/whatsapp_brand.png" alt="Whatsapp">
+          </a>
+        </li>
+        <li>
+          <a class="social_media_a" href="https://github.com/EnzoSolis" target="_blank">
+            <img class="social_media_ico" src="assets/img/github_brand.png" alt="Github">
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer_send_email">
+      <h1 class="footer_h1 text-title text-color-dark" style="font-size: 1.5rem;">Hablemos</h1>
+      <form id="form_email" name="form-email">
+        <label class="form_email_label text-subtitle text-color-dark" for="email">Correo</label>
+        <input type="email" id="email" name="email" value="enzoraulsolis@hotmail.com" readonly>
+        <label class="form_email_label text-subtitle text-color-dark" for="subject">Tema</label>
+        <input type="text" id="subject" name="subject">
+        <textarea wrap="off" form="form_email" id="textarea_body" name="textarea_body" cols="30" rows="10"></textarea>
+        <input  type="submit" value="Enviar">
+      </form>
+    </div>
+    
+  </footer>
 
-  <script>
-    const randomIndex = (len) => Math.floor(Math.random() * len);
-    const message = [
-      "Hi!🖐️", "Nice!", "🐢", "LoL", "Syntax Error⁉️",
-      "Another Day 😎", "🇦🇷", "I don't fix that", "I'm sorry Dave",
-      "Scary Monsters and Nice Sprites"
-    ];
-
-    function showDialogBox() {
-      const dbox = document.getElementById("turtle_dialog_box");
-      const dbox_rect = document.getElementById("turtle_dialog_box_rect");
-
-      let index = randomIndex(message.length);
-      dbox_rect.innerText = message[index];
-      
-      dbox.classList.remove("turtle_dialog_box_hide");
-      void dbox.offsetWidth; // redibujar
-      dbox.classList.add("turtle_dialog_box_hide")
-    }
-  </script>
+  <script src="assets/js/index.js"></script>
 </body>
 </html>
