@@ -100,6 +100,7 @@ input[type="text"], input[type="email"] {
   border-radius: 0.5rem;
   height: 2rem;
   border: none;
+  padding-left: 0.75rem;
 }
 
 #textarea_body {
@@ -226,7 +227,7 @@ a:focus {
 
 #content {
   margin-top: 4rem;
-  overflow-x: clip;
+  /* overflow-x: clip; */
 }
 
 .content_presentation {
@@ -288,7 +289,6 @@ a:focus {
 
 .content_about_me {
   height: auto;
-  width: 100%;
   background-color: var(--bg-one);
   color: var(--text-color);
   align-content: center;
@@ -297,7 +297,7 @@ a:focus {
 .content_about_me > h1 {
   width: 100%;
   text-align: center;
-  padding: 1rem;
+  padding-top: 2rem;
 }
 
 .content_about_me > p {
