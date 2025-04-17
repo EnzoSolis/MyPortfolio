@@ -1,5 +1,5 @@
 let menu_is_hide = true;
-changeTheme();
+setThemeDefault();
 
 window.onresize = (e) => {
   const menuitems = document.getElementById("nav_menu_items");
@@ -18,14 +18,37 @@ window.onresize = (e) => {
   }
 };
 
-function changeTheme() {
+function setThemeDefault() {
   if (!window.matchMedia) return;
-  
+
+  const is_dark_theme = window.matchMedia('(prefers-color-scheme:dark)').matches;  
   const html = document.documentElement;
-  const is_dark_theme = window.matchMedia('(prefers-color-scheme:dark)').matches;
   const theme = (is_dark_theme) ? "dark" : "light";
 
   html.setAttribute("theme", theme);
+}
+
+function changeTheme() {
+  const html = document.documentElement;
+  const btn_theme = document.getElementById("btn_theme");
+  const btn_circle = document.getElementById("btn_circle");
+  const old_theme = html.getAttribute("theme");
+  let new_theme;
+
+  if (old_theme == "light") {
+    new_theme = "dark";
+    btn_circle.classList.remove("nav_theme_btn--to-dark");
+    void btn_theme.offsetWidth;
+    btn_circle.classList.add("nav_theme_btn--to-light");
+  }
+  else {
+    new_theme = "light";
+    btn_circle.classList.remove("nav_theme_btn--to-light");
+    void btn_theme.offsetWidth;
+    btn_circle.classList.add("nav_theme_btn--to-dark");
+  }
+
+  html.setAttribute("theme", new_theme);
 }
 
 function unhideMenu(menuitems, burger) {

@@ -186,6 +186,7 @@ input[type="text"], input[type="email"] {
 
 .nav_right {
   display: flex;
+  padding-right: 4rem;
 }
 
 a {
@@ -367,6 +368,67 @@ a:focus {
   text-decoration: underline;
 }
 
+.nav_theme_btn {
+  width: 2.4rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--bg-one);
+  color: var(--text-color);
+  outline: var(--shadow-color) solid 1px;
+  box-shadow: inset var(--shadow-color) 0 0 10px 1px;
+  padding: 0 0.2rem;
+  margin-left: 1rem;
+  display: block;
+  align-content: center;
+  position: absolute;
+  top: 1.25rem; right: 1rem;
+}
+
+.nav_theme_btn_circle {
+  width: 1.2rem; height: 1.2rem;
+  border-radius: 1rem;
+  background-color: var(--bg-one);
+  outline: var(--shadow-color) solid 1px;
+}
+
+@keyframes btn_theme_animation {
+  100% {
+    transform: translateX(1.2rem);
+  }
+}
+
+.nav_theme_btn--to-light, .nav_theme_btn--to-dark {
+  animation-name: btn_theme_animation;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-timing-function: ease;
+}
+
+.nav_theme_btn--to-light {
+  animation-direction: normal;
+}
+
+.nav_theme_btn--to-dark {
+  animation-direction: reverse;
+}
+
+.nav_theme_btn_ico {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.nav_theme_btn_ico-dark {
+  left: 0.35rem;
+  top: 0.35rem;
+}
+
+.nav_theme_btn_ico-light {
+  right: 0.40rem;
+  top: 0.35rem;
+}
+
 @media (max-aspect-ratio: 1/1) {
   .content_presentation {
     display: inline;
@@ -527,6 +589,7 @@ a:focus {
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+    padding: 0;
   }
 
   .nav_right > a{
